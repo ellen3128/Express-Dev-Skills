@@ -4,7 +4,7 @@ var router = express.Router();
 const Skill = require('../models/skill');
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express Skills' });
+  res.render('index', { title: 'Development Skills' });
 });
 
 module.exports = router;
