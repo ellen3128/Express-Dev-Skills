@@ -2,9 +2,13 @@
 
     <h1>DEV Skills</h1>
     <ul>
-      <% if (skills) { %>
+      <!-- <% if (skills) { %> -->
         <% skills.forEach(function(s) { %>
           <li>
+            <form method="POST" action="/skills/<%=s.id%>?_method=DELETE">
+              <button type="submit">X</button>
+            </form>
+
             <a href="/skills/<%= s.id %>"><%= s.name %></a>
               
             <%= s.proficiency %>
