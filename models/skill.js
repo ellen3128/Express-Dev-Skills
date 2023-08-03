@@ -9,7 +9,8 @@ module.exports = {
     getAll, 
     getOne, 
     create, 
-    destroy: deleteOne
+    destroy: deleteOne,
+    update: updateOne
 };
 
 function getAll() {
@@ -35,4 +36,13 @@ function deleteOne(id) {
     })
     console.log(skillPosition)
     skills.splice(skillPosition, 1)
+}
+
+function updateOne(id, data) {
+    console.log(id, data)
+    let index = skills.findIndex(s=>s.id == id)
+    console.log("current skills index", index)
+    const updateData = {...data }
+    let updatedSkill = {...skills[index], ...updateData}
+    skills.splice(index, 1, updatedSkill)
 }
