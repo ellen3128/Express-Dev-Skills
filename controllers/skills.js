@@ -33,7 +33,7 @@ function newSkill(req, res) {
 
 function createSkill(req, res) {
     Skill.create(req.body);
-    console.log('req.body', req.body)
+    // console.log('req.body', req.body)
     res.redirect('/skills');
 }
 
@@ -46,13 +46,16 @@ function deleteOne(req, res){
 function edit(req, res) {
     const id = req.params.id;
     // res.send(Skill.getOne(id));
+    // console.log(Skill.getOne(id));
     res.render("skills/edit", {title: "Skill Edit", skill: Skill.getOne(id)});
+    // console.log(Skill.getOne(id));
 }
 
 function update (req, res) {
     const id = Number(req.params.id)
     req.body.id = id
-    console.log(req.body, 'data passed to update')
+    // console.log(id)
     Skill.update(id, req.body)
+    // console.log(req.body)
     res.redirect(`/skills/${id}`)
 }

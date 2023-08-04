@@ -41,8 +41,12 @@ function deleteOne(id) {
 function updateOne(id, data) {
     console.log(id, data)
     let index = skills.findIndex(s=>s.id == id)
-    console.log("current skills index", index)
     const updateData = {...data }
     let updatedSkill = {...skills[index], ...updateData}
     skills.splice(index, 1, updatedSkill)
+    updatedSkill.name = updatedSkill.skill
+    console.log("current skills index", updatedSkill)
+    console.log(skills[1])
+
+    return updatedSkill;
 }
